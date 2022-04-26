@@ -1,0 +1,63 @@
+spring:
+  application:
+    name: @project.artifactId@
+    version: @project.version@
+  cache:
+    type: NONE
+  main:
+    web-application-type: NONE
+    log-startup-info: true
+    banner-mode: off
+    lazy-initialization: true
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.availability.ApplicationAvailabilityAutoConfiguration
+
+keycloak:
+  version: @keycloak.version@
+  login-realm: master
+  user: admin
+  grant-type: password
+  client-id: admin-cli
+  ssl-verify: true
+  availability-check:
+    enabled: false
+    timeout: 120s
+    retry-delay: 2s
+
+import:
+  path:
+    operator: ./changelogs/operator
+
+  cache-key: default
+  var-substitution: false
+  var-substitution-in-variables: true
+  var-substitution-undefined-throws-exceptions: true
+  var-substitution-prefix: $(
+  var-substitution-suffix: )
+  force: false
+  state: true
+  sync-user-federation: false
+  # For security reasons, change this value if you want to encrypt the state
+  state-encryption-salt: 2B521C795FBE2F2425DB150CD3700BA9
+  file-type: auto
+  parallel: false
+  remove-default-role-from-user: false
+  skip-attributes-for-federated-user: false
+  managed:
+    authentication-flow: no-delete
+    group: no-delete
+    required-action: no-delete
+    client-scope: no-delete
+    scope-mapping: no-delete
+    component: no-delete
+    sub-component: no-delete
+    identity-provider: no-delete
+    identity-provider-mapper: no-delete
+    role: no-delete
+    client: no-delete
+
+logging:
+  group:
+    http: org.apache.http.wire
+    keycloak-config-cli: de.adorsys.keycloak.config.service,de.adorsys.keycloak.config.KeycloakConfigRunner,de.adorsys.keycloak.config.provider.KeycloakProvider
+    kcc: de.adorsys.keycloak.config.service,de.adorsys.keycloak.config.KeycloakConfigRunner,de.adorsys.keycloak.config.provider.KeycloakProvider

@@ -1,0 +1,20 @@
+version: "3"
+services:
+  keycloak-config-cli:
+      container_name: keycloak-config-cli
+      build: .
+      image: adorsys/keycloak-config-cli:latest
+      depends_on:
+        - keycloak
+      volumes:
+        - ./changelogs:/changelogs
+        - ./config:/config
+      environment:
+        KEYCLOAK_URL: keycloak:8080/auth
+        KEYCLOAK_USER: admin
+        KEYCLOAK_PASSWORD: admin
+        KEYCLOAK_AVAILABILITYCHECK_ENABLED: true
+        SPRING_PROFILES_ACTIVE: local
+        IMPORT_FORCE: false
+        IMPORT_PATH: /config
+        KEYCLOAK_SSLVERIFY: true

@@ -1,0 +1,18 @@
+logging:
+  level:
+    keycloak-config-cli: debug
+    http: info
+
+keycloak:
+  url: https://staging.security.etal-engine.com/auth
+  user: admin
+  password: admin
+  ssl-verify: false
+
+configuration:
+  env: staging
+  advanced-settings:
+    operator-max-version:
+  operators:
+    - realm: operator1
+      reset-version:

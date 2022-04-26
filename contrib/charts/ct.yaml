@@ -1,0 +1,4 @@
+chart-dirs:
+  - contrib/charts/
+check-version-increment: false
+target-branch: main

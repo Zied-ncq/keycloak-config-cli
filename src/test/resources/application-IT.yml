@@ -1,0 +1,49 @@
+keycloak:
+  user: admin
+  password: admin
+  url: http://localhost:8080/auth/
+  #client-id: admin-cli
+  #url: http://local.marjory.com:8180
+
+import:
+  path:
+    operator: ./changelogs/operator
+    core: ./changelogs/core
+    partner: ./changelogs/partner
+  state: true
+
+
+configuration:
+  env: local
+  advanced-settings:
+    core-max-version:
+    operator-max-version:
+  operators:
+    - realm: operatorForTest
+      kie-secret: 6bc51d8c-282d-45fe-a504-61ec693f6d87
+      kie-exec-server-secret: a912b03c-97fa-4099-a429-48cf1912b839
+      kie-git-secret: db5ccef5-24ce-4b79-970a-6f752203702f
+      marketplace-api-secret: 4ce90906-b88a-48fc-a268-2a84c081b83d
+      marketplace-front-secret: 024c2ad8-0d49-4601-8c21-469d2452631b
+      operator-swagger-secret: 6c590a70-ff8b-463b-b06a-d4dd90e14584
+      workflow-editor-secret: d7b3f072-68a9-467e-bca1-56e612499af5
+      module-portal-front-secret: af786214-3187-4af6-9829-8771eb95060b
+      google-identity-provider-client-id:
+      google-identity-provider-client-secret:
+      reset-version:
+
+  core:
+    realm: marjoryForTest
+    core-api-secret: f3c99be8-04f5-4591-b4ff-0e692130b480
+    core-front-secret: 6035e5b2-595c-4475-9b35-fa2c7d7be99b
+    core-workflow-builder-secret: 9aa84cda-b42b-4f2b-bbe9-c7b6abd3e3bc
+    marjory-client-secret: b150e126-1f48-4970-b59a-db7c7f9f61fa
+    module-portal-front-secret: af786214-3187-4af6-9829-8771eb95060b
+    google-identity-provider-client-id:
+    google-identity-provider-client-secret:
+    reset-version:
+
+  partner:
+    realm: partners
+    module-portal-front-secret: af786214-3187-4af6-9829-8771eb95060b
+    reset-version:
