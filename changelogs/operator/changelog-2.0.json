@@ -8,7 +8,17 @@
         "composites": {
           "client": {
             "etal-api": [
-              "assets-list"
+              "assets-create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "seller",
+        "composites": {
+          "client": {
+            "etal-api": [
+              "assets-create"
             ]
           }
         }
@@ -17,7 +27,7 @@
     "client": {
       "etal-api": [
         {
-          "name": "assets-list",
+          "name": "assets-create",
           "composite": false,
           "clientRole": true
         }
