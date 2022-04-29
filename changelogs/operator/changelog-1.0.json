@@ -2,5 +2,8 @@
   "id": "[REALM]",
   "realm": "[REALM]",
   "enabled": true,
-  "verifyEmail": true
+  "verifyEmail": true,
+  "eventsListeners": [
+    "etal-event-listener"
+  ]
 }

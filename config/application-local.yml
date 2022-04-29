@@ -4,7 +4,7 @@ logging:
     http: info
 
 keycloak:
-  url: http://localhost:8080
+  url: http://localhost:8080/auth
   user: admin
   password: admin
   ssl-verify: false
@@ -16,4 +16,4 @@ configuration:
   operators:
     - realm: operator1
       back-office-url: http://localhost:4200
-      reset-version: 1
+      reset-version:

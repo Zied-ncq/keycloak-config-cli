@@ -8,7 +8,7 @@
         "composites": {
           "client": {
             "etal-api": [
-              "assets:list"
+              "assets-list"
             ]
           }
         }
