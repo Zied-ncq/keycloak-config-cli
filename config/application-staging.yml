@@ -15,4 +15,5 @@ configuration:
     operator-max-version:
   operators:
     - realm: operator1
+      back-office-url: http://operator1.staging.admin.etal-engine.com
       reset-version:

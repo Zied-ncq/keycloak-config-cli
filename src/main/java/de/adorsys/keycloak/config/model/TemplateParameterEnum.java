@@ -24,5 +24,6 @@ package de.adorsys.keycloak.config.model;
  * @author hazem
  */
 public enum TemplateParameterEnum {
-    REALM
+    REALM,
+    BACKOFFICE_URL
 }

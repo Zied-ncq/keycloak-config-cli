@@ -1,4 +1,6 @@
 {
   "id": "[REALM]",
-  "realm": "[REALM]"
+  "realm": "[REALM]",
+  "enabled": true,
+  "verifyEmail": true
 }
