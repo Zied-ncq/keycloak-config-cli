@@ -48,7 +48,7 @@ public class RealmProperties {
     public Map<String, String> getOperatorPropertiesAsMap(String realm) {
         return operators.stream()
                 .filter(realmProperties -> realmProperties.getRealm().equals(realm))
-                .map(realmProperties -> realmProperties.asMap(realm, env))
+                .map(realmProperties -> realmProperties.asMap(env))
                 .findFirst()
                 .orElseThrow(() -> new RealmPropertiesNotFound("Realm properties not found for [realm: %s]", realm));
     }

@@ -15,4 +15,5 @@ configuration:
     operator-max-version:
   operators:
     - realm: operator1
+      back-office-url: http://localhost:4200
       reset-version:

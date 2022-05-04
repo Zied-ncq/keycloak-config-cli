@@ -23,10 +23,11 @@ package de.adorsys.keycloak.config.properties;
 import de.adorsys.keycloak.config.model.EnvironmentEnum;
 import de.adorsys.keycloak.config.model.TemplateParameterEnum;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 /**
  * @author hazem
@@ -37,13 +38,16 @@ public class OperatorRealmProperties {
     @Size(min = 1)
     private String realm;
 
+    @NotNull
+    private URL backOfficeUrl;
+
     private Float resetVersion;
 
 
-    public Map<String, String> asMap(String realm,
-                                     EnvironmentEnum env) {
+    public Map<String, String> asMap(EnvironmentEnum env) {
         final Map<String, String> params = new HashMap<>();
         params.put("[" + TemplateParameterEnum.REALM + "]", realm);
+        params.put("[" + TemplateParameterEnum.BACKOFFICE_URL + "]", backOfficeUrl.toString());
         return params;
     }
 
@@ -62,6 +66,15 @@ public class OperatorRealmProperties {
 
     public OperatorRealmProperties setResetVersion(Float resetVersion) {
         this.resetVersion = resetVersion;
+        return this;
+    }
+
+    public URL getBackOfficeUrl() {
+        return backOfficeUrl;
+    }
+
+    public OperatorRealmProperties setBackOfficeUrl(URL backOfficeUrl) {
+        this.backOfficeUrl = backOfficeUrl;
         return this;
     }
 }

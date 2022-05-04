@@ -1,0 +1,60 @@
+{
+  "id": "[REALM]",
+  "realm": "[REALM]",
+  "roles": {
+    "realm": [
+      {
+        "name": "operator",
+        "composites": {
+          "client": {
+            "etal-api": [
+              "assets-create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "seller",
+        "composites": {
+          "client": {
+            "etal-api": [
+              "assets-create"
+            ]
+          }
+        }
+      }
+    ],
+    "client": {
+      "etal-api": [
+        {
+          "name": "assets-create",
+          "composite": false,
+          "clientRole": true
+        }
+      ]
+    }
+  },
+  "clients": [
+    {
+      "clientId": "etal-api",
+      "clientAuthenticatorType": "client-secret",
+      "protocol": "openid-connect",
+      "bearerOnly": true,
+      "publicClient": false
+    },
+    {
+      "clientId": "etal-backoffice",
+      "rootUrl": "[BACKOFFICE_URL]",
+      "baseUrl": "/",
+      "clientAuthenticatorType": "client-secret",
+      "publicClient": true,
+      "directAccessGrantsEnabled": true,
+      "redirectUris": [
+        "/*"
+      ],
+      "webOrigins": [
+        "[BACKOFFICE_URL]"
+      ]
+    }
+  ]
+}
