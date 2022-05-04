@@ -4,7 +4,7 @@ logging:
     http: info
 
 keycloak:
-  url: https://staging.security.etal-engine.com/auth
+  url: https://staging.security.etal-engine.com
   user: admin
   password: admin
   ssl-verify: false

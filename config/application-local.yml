@@ -4,7 +4,7 @@ logging:
     http: info
 
 keycloak:
-  url: http://localhost:8080/auth
+  url: http://localhost:8080
   user: admin
   password: admin
   ssl-verify: false
